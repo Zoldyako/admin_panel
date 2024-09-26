@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+
+header {
+    grid-column: 2 / 3;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+nav {
+    background-color: white;
+}
+
+
+.sidebar {
+    background-color: rgb(28, 143, 209);
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+
+main {
+    background-color: rgb(201, 201, 201);
+}
+
+.announcements,
+.trending,
+.usr-projects > * {
+    background-color: whitesmoke;
+}
