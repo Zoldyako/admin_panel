@@ -1,6 +1,7 @@
 html,
 body {
     margin: 0;
+    font-family: system-ui, 'Helvetica';
 }
 
 body {
@@ -35,7 +36,18 @@ nav {
     background-color: rgb(28, 143, 209);
     grid-column: 1 / 2;
     grid-row: 1 / 3;
+    color: whitesmoke;
+    padding: 12px 24px;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-transform: capitalize;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+
 
 
 main {
