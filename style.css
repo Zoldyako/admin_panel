@@ -72,30 +72,26 @@
 
 
 
-html,
-body {
-    margin: 0;
-    font-family: system-ui, 'Roboto', 'Helvetica';
-}
-
 
 body {
-    display: grid;
-    grid-template-columns: 300px 4fr;
-}
-
-
-header {
-    grid-column: 2 / 3;
-    grid-template-rows: 1fr 1fr;
+  display: grid;
+  grid-template-columns: minmax(250px 350px) 4fr;
+  grid-template-rows: 120px 1fr;
+  font-family: system-ui, 'Roboto', 'Helvetica';
+  margin: 0;
+  height: 100vh;
 }
 
 
 
 /* 
-### NAVBAR
+### HEADER
  */
 
+
+ header {
+  grid-column: 2 / 3;
+}
 
 
 nav {
@@ -209,32 +205,32 @@ nav {
 
 
 .sidebar div {
-    display: flex;
-    align-items: center;
-    padding: 12px;
+   display: flex;
+   align-items: center;
+   padding: 12px;
 
-    & a, p {
-      margin: 0;
-      color: whitesmoke;
-      text-decoration: none;
-    }
+   & a, p {
+     margin: 0;
+     color: whitesmoke;
+     text-decoration: none;
+   }
 }
 
 
 .sidebar svg {
-    fill: whitesmoke;
-    padding-right: 12px;
-    width: 22px;
+  fill: whitesmoke;
+  padding-right: 12px;
+  width: 22px;
 }
 
 
 .sidebar div:first-child {
-    font-size: 22pt;
-    margin-bottom: 36px;
+  font-size: 22pt;
+  margin-bottom: 36px;
 
-    & > svg {
-        width: 40px;
-    }
+  & > svg {
+      width: 40px;
+  }
 }
 
 
@@ -251,48 +247,62 @@ nav {
 
 
 main {
-    background-color: rgb(201, 201, 201);
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 15px;
-    overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  background-color: gainsboro;
+  padding: 16px;
+  gap: 16px;
 }
 
 
-main > * {
-    margin: 8px;
-}
-
-
-.announcements,
-.trending,
-.usr-projects > * {
-    background-color: whitesmoke;
-}
-
-
-.usr-projects {
-    display: grid;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-
-.usr-projects > * {
-    min-width: 300px;
-}
-
-
-.announcements {
-    grid-column: 2 / 3;
+.user-project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20px repeat(3, 1fr);
+  gap: 16px;
+  
+  & p {
+    grid-column: 1 / 3;
     grid-row: 1 / 2;
+    margin: 0;
+  }
 }
 
 
-.trending {
-    grid-area: 2 / 2 / 3 / 3;
+.user-project {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  border-left: 4px solid rgb(21, 202, 247);
+  gap: 16px;
+  padding: 16px;
 }
 
+
+.user-project p:first-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+
+.user-project p:nth-child(2) {
+  font-size: .8rem;
+  color: rgb(78, 78, 78);
+}
+
+
+.read-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  justify-content: end;
+
+  & svg {
+    height: 24px;
+  }
+}
+
+
+.side-actions {
+  display: grid;
+}
